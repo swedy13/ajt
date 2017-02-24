@@ -1,0 +1,68 @@
+.hero
+  display flex
+  align-items center
+  justify-content center
+  position relative
+  height 100vh
+  width 100%
+  background-size cover
+
+
+// ---- MASK ---- //
+.hero
+  .mask
+    position absolute
+    height 100%
+    width 100%
+    background-color #f5ebcf
+    opacity .15
+
+
+// ---- HEADER ---- //
+.hero
+  .header
+    text-align center
+
+  .title,
+  .subtitle
+    color white
+
+  // Title
+  .title
+    font-family "BowlbyOne"
+    text-transform uppercase
+
+  h1.title
+    font-size 3em
+    font-weight 900
+    text-shadow 0 1px 2px rgba(0,0,0,.5)
+
+  // Subtitle
+  .subtitle
+    text-transform uppercase
+
+  h3.subtitle
+    font-size 1.5em
+    font-weight 600
+    text-shadow 0 1px 2px rgba(0,0,0,.5)
+
+
+// ---- BACKGROUNDS ---- //
+.hero
+  &.desert
+    background-image url('../assets/images/hero/desert.jpg')
+
+  &.forest
+    background-image: url('../assets/images/hero/forest.jpg')
+
+  &.jungle
+    background-image: url('../assets/images/hero/jungle.jpg')
+
+  &.mountain
+    background-image: url('../assets/images/hero/mountain.jpg')
+
+  &.ocean
+    background-image: url('../assets/images/hero/ocean.jpg')
+
+  &.tundra
+    background-image: url('../assets/images/hero/tundra.jpg')

@@ -1,0 +1,73 @@
+.animation
+  animation-iteration-count 1
+  animation-timing-function ease-in-out
+  &.slow
+    animation-duration 2s
+  &.fast
+    animation-duration 1.25s
+
+
+// ---- SLIDES ---- //
+.animation
+  &.slide-up
+    animation-name slide-up
+    animation-direction normal
+
+@keyframes slide-up {
+  0% {
+    opacity 0
+    margin-top 150px
+  }
+  25% {
+    opacity 0
+    margin-top 150px
+  }
+  100% {
+    opacity 1
+    margin-top 0px
+  }
+}
+
+
+// ---- FADES ---- //
+.animation
+  &.fade-in
+    animation-name fade-in
+    animation-direction normal
+
+@keyframes fade-in {
+  0% {
+    opacity 0
+  }
+  25% {
+    opacity 0
+  }
+  100% {
+    opacity 1
+  }
+}
+
+
+// ---- POPS ---- //
+.animation
+  &.pop-in
+    animation-name pop-in
+    animation-direction normal
+
+@keyframes pop-in {
+  0% {
+    opacity 0
+    transform scale(0)
+  }
+  25% {
+    opacity 0
+    transform scale(0)
+  }
+  75% {
+    transform scale(1.1)
+  }
+  100% {
+    opacity 1
+    transform scale(1)
+  }
+}
