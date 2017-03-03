@@ -21,7 +21,7 @@ app.get('*', function(req, res) {
 });
 
 
-app.listen(port, 'localhost', function(e) {
+app.listen(port, function(e) {
     if (e) {
         console.log(e);
         return;
