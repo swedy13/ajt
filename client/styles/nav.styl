@@ -1,8 +1,7 @@
 // ---- CORE STYLES ---- //
-.menu
+nav.menu
   z-index 100
-
-  .item
+  > .item
     text-align center
     width 150px
     font-family "Raleway"
@@ -11,23 +10,69 @@
     cursor pointer
     transition .15s ease-in-out
 
+@media screen and (max-width: 414px)
+  nav.menu
+    > .item
+      font-size .9em
+@media screen and (min-width: 415px) and (max-width: 1024px)
+  nav.menu
+    > .item
+      font-size 1em
+@media screen and (min-width: 1025px)
+  nav.menu
+    > .item
+      font-size 1.25em
 
-// ---- SPLASH MENUS ---- //
-.splash.menu
+
+// ---- HERO MENUS ---- //
+.hero > .menu
   display flex
   align-items center
   justify-content center
   position absolute
-  bottom 50px
   width 100%
-
-  .item
-    margin 0 15px
+  > .item
     padding 14px 0
+
+  // Dark Theme
+  &.dark > .item
     background-color rgba(255,255,255,.25)
     box-shadow 0 1px 3px rgba(50,50,50,.15)
     color white
-
+    text-shadow 0 1px 1px rgba(0,0,0,.15)
     &:hover
       background-color rgba(255,255,255,.5)
       text-shadow 0 1px 1px rgba(0,0,0,.5)
+
+  // Light Theme
+  &.light > .item
+    background-color rgba(255,255,255,.75)
+    box-shadow 0 1px 3px rgba(50,50,50,.15)
+    color rgb(160, 104, 64)
+    &:hover
+      background-color rgba(255,255,255,1)
+  &.mountain > .item
+      color rgb(86, 106, 82)
+
+
+@media screen and (max-width: 414px)
+  .hero > .menu
+    bottom 0px
+    box-shadow 0 -3px 3px rgba(0,0,0,.25)
+    > .item
+      margin 0px
+      border-top 1px solid rgba(255,255,255,.1)
+      border-right 1px solid rgba(255,255,255,.1)
+      box-shadow none
+      &:last-child
+        border-right none
+@media screen and (min-width: 415px) and (max-width: 1024px)
+  .hero > .menu
+    bottom 20px
+    > .item
+      margin 0 10px
+@media screen and (min-width: 1025px)
+  .hero > .menu
+    bottom 50px
+    > .item
+      margin 0 15px

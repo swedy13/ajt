@@ -1,20 +1,36 @@
+// ---- REACT TRANSITIONS ---- //
+// Slide Up
 .slide-up-enter
   opacity 0.01
   margin-top 150px
-
-.slide-up-enter.slide-up-enter-active
-  opacity 1
-  margin-top 0px
-  transition 2000ms ease-in-out
+  &.slide-up-enter-active
+    opacity 1
+    margin-top 0px
+    transition 1200ms ease-in-out
+    transition-delay 300ms
 
 .slide-up-leave
   margin-top 0px
   opacity 1
+  &.slide-up-leave-active
+    margin-top 150px
+    opacity 0.01
+    transition 300ms ease-in-out
 
-.slide-up-leave.slide-up-leave-active
-  margin-top 150px
+
+// Fade In
+.fade-in-enter
   opacity 0.01
-  transition 300ms ease-in-out
+  &.fade-in-enter-active
+    opacity 1
+    transition 1200ms ease-in-out
+    transition-delay 300ms
+
+.fade-in-leave
+  opacity 1
+  &.fade-in-leave-active
+    opacity 0.01
+    transition 300ms ease-in-out
 
 
 
