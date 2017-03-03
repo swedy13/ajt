@@ -5,6 +5,8 @@ import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 import { NavList } from './Nav';
 
+import styles from '../styles/hero.styl';
+
 
 export default class Home extends Component {
     constructor(props) {

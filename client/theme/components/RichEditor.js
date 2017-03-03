@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 
-import styles       from './RichEditor.css';
-import TextField    from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
 import { Editor, EditorState, RichUtils, convertToRaw } from 'draft-js';
 
-import { Posts } from '../../api/posts.js';
+import { Posts } from '../../../api/posts.js';
+
+import styles from '../styles/rich-editor.styl';
 
 
 export default class RichEditor extends Component {
@@ -58,7 +57,7 @@ export default class RichEditor extends Component {
 
     onPublish(e) {
         e.preventDefault();
-        const title = $('.richeditor .title input').val();
+        let title = $('.richeditor .title input').val();
         const content = convertToRaw(this.state.editorState.getCurrentContent());
 
         Posts._collection.insert({
@@ -83,11 +82,6 @@ export default class RichEditor extends Component {
 
         return (
             <div className="richeditor">
-                <TextField
-                    className="title"
-                    floatingLabelText="Title"
-                    fullWidth={true}
-                />
                 <div className="RichEditor-root">
                     <BlockStyleControls
                         editorState={editorState}
@@ -111,12 +105,7 @@ export default class RichEditor extends Component {
                         />
                     </div>
                 </div>
-                <RaisedButton
-                    className="publish"
-                    onClick={this.onPublish}
-                    label="Publish"
-                    primary={true}
-                />
+                <button className="publish" onClick={this.onPublish}>Publish</button>
             </div>
         );
     }
@@ -174,7 +163,6 @@ const BLOCK_TYPES = [
     {label: 'OL', style: 'ordered-list-item'},
     {label: 'Code Block', style: 'code-block'},
 ];
-
 const BlockStyleControls = (props) => {
     const {editorState} = props;
     const selection = editorState.getSelection();
@@ -186,25 +174,23 @@ const BlockStyleControls = (props) => {
     return (
         <div className="RichEditor-controls">
             {BLOCK_TYPES.map((type) =>
-                <StyleButton
-                    key={type.label}
-                    active={type.style === blockType}
-                    label={type.label}
-                    onToggle={props.onToggle}
-                    style={type.style}
+                <StyleButton key={type.label}
+                             active={type.style === blockType}
+                             label={type.label}
+                             onToggle={props.onToggle}
+                             style={type.style}
                 />
              )}
         </div>
     );
 };
 
-var INLINE_STYLES = [
+const INLINE_STYLES = [
     {label: 'Bold', style: 'BOLD'},
     {label: 'Italic', style: 'ITALIC'},
     {label: 'Underline', style: 'UNDERLINE'},
     {label: 'Monospace', style: 'CODE'},
 ];
-
 const InlineStyleControls = (props) => {
     var currentStyle = props.editorState.getCurrentInlineStyle();
     return (

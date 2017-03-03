@@ -4,7 +4,9 @@ import { Editor, EditorState, RichUtils, convertToRaw } from 'draft-js';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
-import { Posts } from '../../api/posts.js';
+/* import { Posts } from '../../api/posts.js';*/
+
+import styles from '../styles/text-editor.styl';
 
 
 export default class TextEditor extends Component {

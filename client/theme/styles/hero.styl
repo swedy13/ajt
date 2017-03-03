@@ -9,17 +9,17 @@
   right 0
   background-size cover
   &.desert
-    background-image url('../assets/images/hero/desert.jpg')
+    background-image url('../../assets/images/hero/desert.jpg')
   &.forest
-    background-image: url('../assets/images/hero/forest.jpg')
+    background-image: url('../../assets/images/hero/forest.jpg')
   &.jungle
-    background-image: url('../assets/images/hero/jungle.jpg')
+    background-image: url('../../assets/images/hero/jungle.jpg')
   &.mountain
-    background-image: url('../assets/images/hero/mountain.jpg')
+    background-image: url('../../assets/images/hero/mountain.jpg')
   &.ocean
-    background-image: url('../assets/images/hero/ocean.jpg')
+    background-image: url('../../assets/images/hero/ocean.jpg')
   &.tundra
-    background-image: url('../assets/images/hero/tundra.jpg')
+    background-image: url('../../assets/images/hero/tundra.jpg')
 
 
 // ---- MASK ---- //
@@ -44,33 +44,36 @@
       text-transform uppercase
       text-shadow 0 1px 2px rgba(0,0,0,0.5), 0px 3px 25px rgba(0,0,0,.25)
 
-    h1.title
-      margin-bottom 10px
+    .title
       font-family "BowlbyOne"
       font-weight 900
       line-height 1.15
 
-    h3.subtitle
+    .subtitle
       font-weight 600
+      line-height 1.35
 
 @media screen and (max-width: 414px)
   .hero .title-group
-    h1.title
+    .title
+      margin-bottom 20px
       font-size 2.75em
       word-spacing 100vw
-    h3.subtitle
+    .subtitle
       font-size 1.25em
 
 @media screen and (min-width: 415px) and (max-width: 1024px)
   .hero .title-group
-    h1.title
-      font-size 3em
-    h3.subtitle
-      font-size 1.5em
+    .title
+      margin-bottom 10px
+      font-size 2.75em
+    .subtitle
+      font-size 1.25em
 
 @media screen and (min-width: 1025px)
   .hero .title-group
-    h1.title
-      font-size 4em
-    h3.subtitle
-      font-size 2em
+    .title
+      margin-bottom 10px
+      font-size 3em
+    .subtitle
+      font-size 1.5em
